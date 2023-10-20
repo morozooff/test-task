@@ -84,16 +84,40 @@ CRUD-операции можно осуществлять посредством
 Перед этим нам нужно создать артиста, так как модель Album зависить от модели Artist.
 <img src="https://github.com/morozooff/test-task/blob/master/screenshots/1.png">
 
-Для этого отправим по URL: http://127.0.0.1:8000/artists/ post-запрос. Артист создан. 
+Для этого отправим по URL: http://127.0.0.1:8000/artists/ post-запрос.
+Тело такого запроса должно иметь следующую структуру:
+
+```
+{
+    "name": "" ,
+}
+```
+Артист создан. 
 <img src="https://github.com/morozooff/test-task/blob/master/screenshots/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202023-10-20%20%D0%B2%2015.37.40.png">
 
 Теперь перейдем с созданию альбома. Скриншот до создания нового альбома:
 <img src="https://github.com/morozooff/test-task/blob/master/screenshots/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202023-10-20%20%D0%B2%2015.42.48.png">
 
-Для создания альбома теперь отправим POST-запрос по URL: http://127.0.0.1:8000/albums/. Скриншот нового списка альбомов:
+Для создания альбома теперь отправим POST-запрос по URL: http://127.0.0.1:8000/albums/. 
+Тело такого запроса должно иметь следующую структуру:
+```
+{
+    "name": "",
+    "year": 2023,
+    "artist_name": ""
+}
+```
+Скриншот нового списка альбомов:
 <img src="https://github.com/morozooff/test-task/blob/master/screenshots/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202023-10-20%20%D0%B2%2015.43.00.png">
 
 Теперь заполним треками этот альбом, отправив новые POST-запросы по URL: http://127.0.0.1:8000/tracks/, где и привяжем их к текущему альбому:
+Тело такого запроса должно иметь следующую структуру:
+```
+{
+    "name": "",
+    "album_name": ""
+}
+```
 <img src="https://github.com/morozooff/test-task/blob/master/screenshots/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202023-10-20%20%D0%B2%2015.46.47.png">
 
 Cоздание объектов работает корректно, перейдем к другим операциям.
